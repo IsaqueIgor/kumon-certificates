@@ -5,14 +5,14 @@ import Button from '../../../../components/Button';
 export const Container = styled(Button)`
   && {
     ${({ theme }) => css`
-      color: ${theme.colors.grey};
+      color: ${theme.colors.primaryDark};
       font-size: ${theme.fontSizes.default};
       width: 100%;
       justify-content: flex-start;
       border-radius: 0;
       padding: 1.6rem 0;
       :not(:last-child) {
-        border-bottom: 0.1rem solid ${theme.colors.lightGrey};
+        border-bottom: 0.1rem solid ${theme.colors.primaryDark};
       }
 
       > div {

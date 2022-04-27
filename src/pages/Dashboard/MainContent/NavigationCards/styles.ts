@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { transparentize } from 'polished';
 import { motion } from 'framer-motion';
 
 export const AnimatedContainer = styled(motion.div)`

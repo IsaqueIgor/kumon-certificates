@@ -1,39 +1,38 @@
-import React from 'react';
-
-import {
-  FiBarChart2,
-  FiCreditCard,
-  FiGift,
-  FiUmbrella,
-  FiRepeat,
-} from 'react-icons/fi';
-
-import { BoletoIcon } from '../assets/images/icons';
 import Modelo1 from '../assets/images/modelos/modelo.jpg';
+import Modelo2 from '../assets/images/modelos/model2.jpg';
+import Modelo3 from '../assets/images/modelos/modelo3.jpg';
 
 export default {
-  Transferring: {
+  modelo01: {
     label: 'fdcc',
     icon: Modelo1,
   },
-  Payments: {
+  modelo02: {
     label: 'ssd',
-    icon: Modelo1,
+    icon: Modelo3,
   },
-  Investments: {
+  modelo03: {
     label: 'dsdsd',
     icon: Modelo1,
   },
-  Cards: {
+  modelo04: {
     label: 'dsdsd',
-    icon: Modelo1,
+    icon: Modelo2,
   },
-  'Gift Card': {
+  modelo05: {
     label: 'dsdsds',
     icon: Modelo1,
   },
-  Insurances: {
+  modelo06: {
     label: 'dsdsds',
     icon: Modelo1,
+  },
+  modelo07: {
+    label: 'dsdsds',
+    icon: Modelo2,
+  },
+  modelo08: {
+    label: 'dsdsds',
+    icon: Modelo3,
   },
 } as const;

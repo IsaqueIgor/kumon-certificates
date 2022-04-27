@@ -1,19 +1,8 @@
 import React from 'react';
 
-import { FiShoppingCart, FiArrowRight, FiChevronRight } from 'react-icons/fi';
 import { useTheme } from 'styled-components';
-import { darken } from 'polished';
 
-import {
-  Container,
-  ShoppingButton,
-  Products,
-  ProductCard,
-  EquityButton,
-  LoanButton,
-} from './styles';
-import Button from '../../../../components/Button';
-import { bankProducts } from '../../../../constants';
+import { Container } from './styles';
 
 const BankProducts: React.FC = () => {
   const { colors } = useTheme();

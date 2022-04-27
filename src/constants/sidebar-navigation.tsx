@@ -1,26 +1,18 @@
 import React from 'react';
 
-import {
-  FiBarChart2,
-  FiHexagon,
-  FiCreditCard,
-  FiSmartphone,
-  FiFileText,
-  FiUmbrella,
-  FiShield,
-} from 'react-icons/fi';
+import { BockIcon, InglesIcon, MathIcon } from '../assets/images/icons';
 
 export default {
   'Digital Account': {
-    icon: <FiSmartphone />,
+    icon: <BockIcon />,
     label: 'Lectura',
   },
   Cards: {
-    icon: <FiCreditCard />,
+    icon: <InglesIcon />,
     label: 'Matemáticas',
   },
   Investments: {
-    icon: <FiBarChart2 />,
+    icon: <MathIcon />,
     label: 'Inglés',
   },
 } as const;

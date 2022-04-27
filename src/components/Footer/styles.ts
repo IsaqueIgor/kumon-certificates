@@ -10,7 +10,7 @@ export const AnimatedContainer = styled(motion.footer)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 3.2rem;
+  margin-top: 2.8rem;
   transform-origin: bottom;
 `;
 

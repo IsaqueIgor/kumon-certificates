@@ -22,6 +22,11 @@ export const AnimatedContainer = styled(motion.section)`
     border-radius: ${theme.radii.default};
     box-shadow: ${theme.shadows.default};
     padding: 2.4rem;
+
+    h3 {
+      padding: 0.4rem;
+      color: ${theme.colors.primary};
+    }
   `}
 `;
 

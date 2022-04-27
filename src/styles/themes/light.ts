@@ -3,6 +3,8 @@ export default {
     primary: '#6dcff6',
     primaryDark: '#249ECE',
     secondary: '#249ECE',
+    green: '#8ac643',
+    pink: '#f05b72',
     grey: '#8C91A5',
     greyLowerOpacity: '#abaebf',
     lightGrey: '#F5F6FA',
@@ -11,7 +13,6 @@ export default {
     error: '#FD4F48',
     label: '#fff',
     background: '#fff',
-    yellow: '#FFED00',
   },
   fontSizes: {
     default: '1.4rem',

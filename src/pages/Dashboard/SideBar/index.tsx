@@ -22,14 +22,7 @@ const SideBar: React.FC = () => {
   return (
     <Wrapper>
       <AnimatedContainer variants={animation}>
-        <AccountBalance />
-        <AnimatedAmountInvested
-          whileHover={{ y: -4, transition: DEFAULT_TRANSITION }}
-          whileTap={{ y: 2, transition: DEFAULT_TRANSITION }}
-        >
-          {'dsdsd '}
-          <FiBarChart2 size="1.6rem" />
-        </AnimatedAmountInvested>
+        <h3>Materias</h3>
         {Object.entries(sideBarNavigation).map(([key, value]) => (
           <Accordion key={key} icon={value.icon} sectionName={value.label} />
         ))}

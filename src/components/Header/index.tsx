@@ -7,7 +7,6 @@ import {
   AnimatedRightNav,
 } from './styles';
 import { KumonLogo } from '../../assets/images';
-import Button from '../Button';
 import AccountDropdown from './AccountDropdown';
 import useAuth from '../../contexts/auth';
 import Gradient from './Gradient';

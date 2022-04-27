@@ -14,7 +14,6 @@ const Accordion: React.FC<AccordionProps> = ({ icon, sectionName }) => {
     <Container>
       <div>{icon}</div>
       {sectionName}
-      <FiChevronDown />
     </Container>
   );
 };
