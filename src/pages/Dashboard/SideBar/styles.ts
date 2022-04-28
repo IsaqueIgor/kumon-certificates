@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { transparentize } from 'polished';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled.div`
@@ -28,26 +27,4 @@ export const AnimatedContainer = styled(motion.section)`
       color: ${theme.colors.primary};
     }
   `}
-`;
-
-export const AnimatedAmountInvested = styled(motion.button)`
-  && {
-    ${({ theme }) => css`
-      display: flex;
-      justify-content: space-between;
-      color: ${theme.colors.label};
-      font-size: ${theme.fontSizes.small};
-      width: 100%;
-      margin: 0.8rem 0;
-      padding: 0.8rem 2.4rem;
-      border-radius: ${theme.radii.small};
-      transition: box-shadow 300ms ease-out;
-      background: ${`linear-gradient(90deg, ${theme.colors.secondary} 0%, ${theme.colors.primary} 100%);`};
-
-      :hover {
-        box-shadow: 0 0.4rem 0.4rem
-          ${transparentize(0.72, theme.colors.secondary)};
-      }
-    `}
-  }
 `;

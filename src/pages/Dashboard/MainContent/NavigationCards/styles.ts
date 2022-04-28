@@ -31,13 +31,13 @@ export const AnimatedCard = styled(motion.button)`
     justify-content: center;
     align-items: center;
     background: ${theme.colors.background};
-    color: ${theme.colors.grey};
+    color: ${theme.colors.primary};
     border-radius: ${theme.radii.default};
     padding: 1.6rem;
     box-shadow: ${theme.shadows.default};
     font-size: ${theme.fontSizes.default};
     div {
-      background: ${theme.colors.lightGrey};
+      background: ${theme.colors.primary};
       max-width: 6.4rem;
       max-height: 6.4rem;
       width: 100%;

@@ -44,7 +44,6 @@ export const Wrapper = styled(HeaderWrapper)`
 export const FooterSection = styled(AnimatedContainer)<{ background?: string }>`
   ${({ theme, background }) => css`
     background: ${background || transparentize(0.92, theme.colors.grey)};
-    margin-top: 0;
 
     :last-of-type {
       ${Wrapper} {
