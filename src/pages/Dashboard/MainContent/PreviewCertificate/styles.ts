@@ -18,7 +18,7 @@ export const Container = styled.section`
         display: grid;
         grid-gap: 2.4rem;
         grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-        min-height: 18.4rem;
+        min-height: 6.4rem;
       }
 
       input {
@@ -43,6 +43,23 @@ export const Container = styled.section`
         height: 35px;
         padding: 0.5rem;
       }
+    }
+  `}
+`;
+
+export const PreviewContainer = styled.section`
+  ${({ theme }) => css`
+    background: ${theme.colors.lightGrey};
+    border-radius: ${theme.radii.default};
+    box-shadow: ${theme.shadows.flat};
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.4rem;
+
+    img {
+      object-fit: cover;
+      height: 320px;
     }
   `}
 `;

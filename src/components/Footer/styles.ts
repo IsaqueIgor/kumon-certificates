@@ -33,11 +33,6 @@ export const Wrapper = styled(HeaderWrapper)`
     > img {
       margin-top: 1.6rem;
     }
-
-    @media (max-width: 568px) {
-      flex-direction: column;
-      text-align: center;
-    }
   `}
 `;
 

@@ -13,8 +13,6 @@ import Gradient from './Gradient';
 import { CONTAINER_ANIMATION, NAVS_ANIMATION } from './animations';
 
 const Header: React.FC = () => {
-  const { signOut } = useAuth();
-
   return (
     <AnimatedContainer
       variants={CONTAINER_ANIMATION}

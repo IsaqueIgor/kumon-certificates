@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import PreviewImg from './PreviewImg';
 import { Container } from './styles';
 
 const options = [
@@ -40,6 +41,7 @@ const PreviewCertificate: React.FC = () => {
           <input type="text" placeholder=" " />
         </div>
       </div>
+      <PreviewImg />
     </Container>
   );
 };

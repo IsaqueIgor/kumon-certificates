@@ -8,7 +8,7 @@
 [] -Baixar lista de participantes que escolheram o modelo X
 [] -subir modelos na pagina
 [] -previa do modelo com o nome
-[] -mudar typografia
+[X] -mudar typografia
 [] -subir typografia
 [] -subir isso online
 [] -visão admin
@@ -16,7 +16,7 @@
 [] -login
 [] -baixar relatorio com data para rich
 [] -enviar por email
-[] - Mais para frente subir materiais
+[X] - Mais para frente subir materiais
 [] -menu
 
 

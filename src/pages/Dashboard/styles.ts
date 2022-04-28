@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 export const Container = styled.div`
   margin-top: -2.8rem;
   width: 100%;
-  height: 100%;
   display: flex;
   flex: 1;
   justify-content: center;
