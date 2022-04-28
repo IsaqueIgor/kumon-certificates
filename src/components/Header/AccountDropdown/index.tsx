@@ -61,6 +61,7 @@ const AccountDropdown: React.FC = () => {
             ref={dropdownRef}
           >
             <ul>
+              <NavButton>Upload Modelo</NavButton>
               <NavButton onClick={handleSignOut}>
                 <FiLogOut />
                 Logout
