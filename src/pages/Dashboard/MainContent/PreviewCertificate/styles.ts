@@ -63,3 +63,29 @@ export const PreviewContainer = styled.section`
     }
   `}
 `;
+
+export const ConfirmWrapper = styled.section`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    margin-top: 1.4rem;
+
+    button {
+      background: ${theme.colors.green};
+      border-radius: ${theme.radii.default};
+      color: ${theme.colors.label};
+    }
+  `}
+`;
+
+export const TextUpdock = styled.h1`
+  font-family: 'Updock', cursive;
+`;
+
+export const TextWater = styled.h1`
+  font-family: 'Pacifico', cursive;
+`;
+
+export const TextWhisper = styled.h1`
+  font-family: 'Whisper', cursive;
+`;

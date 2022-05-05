@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container } from './styles';
 import NavigationCards from './NavigationCards';
 import PreviewCertificate from './PreviewCertificate';
+import { Imodels } from '../../../constants/cards-navigation';
 
-const MainContent: React.FC = () => {
+interface MainContentProps {
+  model: Imodels[];
+}
+
+const MainContent: React.FC<MainContentProps> = ({ model }) => {
+  const [selectedModel, setSelectedModel] = useState(model[0].icon);
+
+  const handleChangeModel = (item: Imodels): void => {
+    setSelectedModel(item.icon);
+  };
+
   return (
     <Container>
-      <NavigationCards />
-      <PreviewCertificate />
+      <NavigationCards models={model} onChange={handleChangeModel} />
+      <PreviewCertificate modeloImg={selectedModel} />
     </Container>
   );
 };

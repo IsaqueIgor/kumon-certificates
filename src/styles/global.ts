@@ -33,6 +33,28 @@ export default createGlobalStyle`
     flex-direction: column;
   }
 
+  @font-face {
+    font-family: 'Updock', cursive;
+    src: local('Updock-Regular'), url(./fontsUpdock-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Water Brush', cursive;
+    src: local('WaterBrush-Regular'), url(./WaterBrush-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Pacifico', cursive;
+    src: local('Pacifico-Regular'), url(./Pacifico-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Whisper', cursive;
+    src: local('Whisper-Regular'), url(./Whisper-Regular.ttf);
+  }
+
+
+
     body, input, button {
     font: 1.6rem 'Lato', -apple-system, BlinkMacSystemFont,"Futura ExtraBold", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.48;

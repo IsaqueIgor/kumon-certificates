@@ -15,13 +15,23 @@ const animation = {
   },
 };
 
-const SideBar: React.FC = () => {
+interface SideBarProps {
+  onChange(classId: string): void;
+}
+
+const SideBar: React.FC<SideBarProps> = ({ onChange }) => {
   return (
     <Wrapper>
       <AnimatedContainer variants={animation}>
         <h3>Materias</h3>
         {Object.entries(sideBarNavigation).map(([key, value]) => (
-          <Accordion key={key} icon={value.icon} sectionName={value.label} />
+          <Accordion
+            key={key}
+            icon={value.icon}
+            sectionName={value.label}
+            id={value.id}
+            onClickSubject={onChange}
+          />
         ))}
       </AnimatedContainer>
     </Wrapper>

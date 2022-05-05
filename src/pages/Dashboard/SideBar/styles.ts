@@ -28,3 +28,5 @@ export const AnimatedContainer = styled(motion.section)`
     }
   `}
 `;
+
+export const WrapperButton = styled.button``;
