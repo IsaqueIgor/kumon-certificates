@@ -9,6 +9,10 @@ interface AddItemProps {
   onAdd: () => void;
 }
 
+interface StudentList {
+  name: string
+}
+
 interface ListProps {
   list: {
     name: string;
@@ -36,17 +40,15 @@ const List: React.FC<ListProps> = ({ list }) => (
 );
 
 const StudentsList: React.FC = () => {
-  const [students, setStudents] = useState([]);
-  const [name, setName] = React.useState('');
+  const [students, setStudents] = useState<StudentList[]>([]);
+  const [name, setName] = React.useState<string>('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setName(event.target.value);
   };
 
   const handleAdd = (): void => {
-    const newList = students.concat({ name });
-
-    setStudents(newList);
+    setStudents([...students, {name: name}])
     setName('');
   };
 

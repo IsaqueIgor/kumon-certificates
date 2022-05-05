@@ -23,7 +23,7 @@ interface PreviewCertificate {
 
 const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
   const [selectedTipografia, setSelectedTipografia] = useState<Tipografia>(
-    options[0].value,
+   Tipografia.tipo1,
   );
   const [namePreview, setNamePreview] = useState('');
 
@@ -48,7 +48,7 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
             id="typo"
             placeholder="Please choose"
             value={selectedTipografia}
-            onChange={(e) => setSelectedTipografia(e.target.value)}
+            onChange={(e) => setSelectedTipografia(e.target.value as Tipografia)}
           >
             {options.map((item) => (
               <option value={item.value}>{item.label}</option>
