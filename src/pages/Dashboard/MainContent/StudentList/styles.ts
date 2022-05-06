@@ -6,6 +6,11 @@ export const Container = styled.main`
   flex-wrap: wrap
   width: 100%;
   justify-content: space-between;
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const AddItemWrapper = styled.div`

@@ -47,7 +47,7 @@ const StudentsList: React.FC = () => {
   const [students, setStudents] = useState<StudentList[]>([]);
   const [name, setName] = React.useState<string>('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setName(event.target.value);
   };
 
@@ -57,14 +57,15 @@ const StudentsList: React.FC = () => {
   };
 
   const handleonRemove = (nameToBeRemove: string): void => {
-    students.filter((student) => {
+    const newList = students.filter((student) => {
       return student.name !== nameToBeRemove;
    })
+   setStudents(newList )
   };
 
   return (
     <Container>
-      <AddItem name={name} onChange={handleChange} onAdd={handleAdd}  />
+      <AddItem name={name} onChange={handleChangeName} onAdd={handleAdd}  />
       <List list={students}  onRemove={handleonRemove}/>
     </Container>
   );
