@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button } from '../../../../components';
-import { Container, AddItemWrapper } from './styles';
+import { Container, AddItemWrapper , ItemList, ListWrapper} from './styles';
 
 interface AddItemProps {
   name: string;
@@ -17,6 +17,7 @@ interface ListProps {
   list: {
     name: string;
   }[];
+  onRemove: (nameToBeRemove: string) => void;
 }
 
 const AddItem: React.FC<AddItemProps> = ({ name, onChange, onAdd }) => (
@@ -28,15 +29,18 @@ const AddItem: React.FC<AddItemProps> = ({ name, onChange, onAdd }) => (
   </AddItemWrapper>
 );
 
-const List: React.FC<ListProps> = ({ list }) => (
-  <div>
+const List: React.FC<ListProps> = ({ list, onRemove  }) => (
+  <ListWrapper>
     <h3>Participantes</h3>
     <ul>
       {list.map((item) => (
-        <li key={item.name}>{item.name}</li>
+        <ItemList key={item.name}>
+          <p>{item.name}</p>
+          <button onClick={() => onRemove(item.name)}>X</button>
+        </ItemList>
       ))}
     </ul>
-  </div>
+  </ListWrapper>
 );
 
 const StudentsList: React.FC = () => {
@@ -52,10 +56,16 @@ const StudentsList: React.FC = () => {
     setName('');
   };
 
+  const handleonRemove = (nameToBeRemove: string): void => {
+    students.filter((student) => {
+      return student.name !== nameToBeRemove;
+   })
+  };
+
   return (
     <Container>
-      <AddItem name={name} onChange={handleChange} onAdd={handleAdd} />
-      <List list={students} />
+      <AddItem name={name} onChange={handleChange} onAdd={handleAdd}  />
+      <List list={students}  onRemove={handleonRemove}/>
     </Container>
   );
 };

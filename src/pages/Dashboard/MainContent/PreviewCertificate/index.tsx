@@ -12,7 +12,7 @@ const options = [
   { value: 'tipo3', label: 'Whisper Regular' },
 ];
 
-enum Tipografia {
+export enum Tipografia {
   tipo1 = 'tipo1',
   tipo2 = 'tipo2',
   tipo3 = 'tipo3',
@@ -64,10 +64,9 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
             value={namePreview}
             onChange={onChangeText}
           />
-          <TextPreview name={namePreview} tipografia={selectedTipografia} />
         </div>
       </div>
-      <PreviewImg certificateImg={modeloImg} />
+      <PreviewImg certificateImg={modeloImg} namePreview={namePreview}  selectedTipografia={selectedTipografia} />
       <StudentsList />
       <ConfirmWrapper>
         <Button>Enviar</Button>

@@ -24,6 +24,7 @@ export const AnimatedLeftNav = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding: 1.8rem;
   > svg {
     max-width: 11.2rem;
     height: auto;

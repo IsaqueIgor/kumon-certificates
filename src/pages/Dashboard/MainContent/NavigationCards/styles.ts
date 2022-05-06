@@ -33,7 +33,7 @@ export const AnimatedCard = styled(motion.button)`
     background: ${theme.colors.background};
     color: ${theme.colors.primary};
     border-radius: ${theme.radii.default};
-    padding: 1.6rem;
+    padding: 1.2rem;
     box-shadow: ${theme.shadows.default};
     font-size: ${theme.fontSizes.default};
     div {
@@ -50,6 +50,7 @@ export const AnimatedCard = styled(motion.button)`
     }
     img {
       object-fit: cover;
+      max-width:100%;
       height: 120px;
     }
     svg {

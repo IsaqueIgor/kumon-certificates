@@ -56,11 +56,27 @@ export const PreviewContainer = styled.section`
     display: flex;
     justify-content: center;
     margin-top: 1.4rem;
+    position: relative;
+    overflow: hidden;
 
     img {
       object-fit: cover;
       height: 320px;
     }
+
+
+    h1 {
+    font-size: 50px;
+    color: #000;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+}
   `}
 `;
 
