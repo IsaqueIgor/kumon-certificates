@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ClassContext } from '../../../../contexts/class';
 
 import { Button } from '../../../../components';
 import { Container, AddItemWrapper , ItemList, ListWrapper} from './styles';
@@ -44,7 +45,7 @@ const List: React.FC<ListProps> = ({ list, onRemove  }) => (
 );
 
 const StudentsList: React.FC = () => {
-  const [students, setStudents] = useState<StudentList[]>([]);
+  const { studentList,handleStudentList, handleRemoveStudent } = useContext(ClassContext);
   const [name, setName] = React.useState<string>('');
 
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -52,21 +53,14 @@ const StudentsList: React.FC = () => {
   };
 
   const handleAdd = (): void => {
-    setStudents([...students, {name: name}])
+    handleStudentList(name)
     setName('');
-  };
-
-  const handleonRemove = (nameToBeRemove: string): void => {
-    const newList = students.filter((student) => {
-      return student.name !== nameToBeRemove;
-   })
-   setStudents(newList )
   };
 
   return (
     <Container>
       <AddItem name={name} onChange={handleChangeName} onAdd={handleAdd}  />
-      <List list={students}  onRemove={handleonRemove}/>
+      <List list={studentList}  onRemove={handleRemoveStudent}/>
     </Container>
   );
 };

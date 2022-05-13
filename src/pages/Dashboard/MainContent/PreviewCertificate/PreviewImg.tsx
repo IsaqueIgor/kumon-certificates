@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tipografia } from '.';
+import { Tipografia } from '../../../../contexts/class';
 
 import { PreviewContainer } from './styles';
 import TextPreview from './TextPreview';

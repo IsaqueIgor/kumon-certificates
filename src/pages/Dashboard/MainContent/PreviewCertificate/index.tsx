@@ -1,30 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import PreviewImg from './PreviewImg';
 import { Container, ConfirmWrapper } from './styles';
 import { Button } from '../../../../components';
-import TextPreview from './TextPreview';
+import { ClassContext, Tipografia } from '../../../../contexts/class';
 import StudentsList from '../StudentList';
+import { options } from '../../../../constants';
 
-const options = [
-  { value: 'tipo1', label: 'Updock Regular' },
-  { value: 'tipo2', label: 'Water Brush' },
-  { value: 'tipo3', label: 'Whisper Regular' },
-];
-
-export enum Tipografia {
-  tipo1 = 'tipo1',
-  tipo2 = 'tipo2',
-  tipo3 = 'tipo3',
-}
 interface PreviewCertificate {
   modeloImg: string;
 }
 
 const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
-  const [selectedTipografia, setSelectedTipografia] = useState<Tipografia>(
-   Tipografia.tipo1,
-  );
+  const { handleTipografia, tipografia } = useContext(ClassContext);
   const [namePreview, setNamePreview] = useState('');
 
   const onChangeText = (event: any) => {
@@ -47,8 +35,8 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
             name="typografia"
             id="typo"
             placeholder="Please choose"
-            value={selectedTipografia}
-            onChange={(e) => setSelectedTipografia(e.target.value as Tipografia)}
+            value={tipografia}
+            onChange={(e) => handleTipografia(e.target.value as Tipografia)}
           >
             {options.map((item) => (
               <option value={item.value}>{item.label}</option>
@@ -66,7 +54,7 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
           />
         </div>
       </div>
-      <PreviewImg certificateImg={modeloImg} namePreview={namePreview}  selectedTipografia={selectedTipografia} />
+      <PreviewImg certificateImg={modeloImg} namePreview={namePreview}  selectedTipografia={tipografia} />
       <StudentsList />
       <ConfirmWrapper>
         <Button>Enviar</Button>

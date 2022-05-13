@@ -1,21 +1,20 @@
-import React from 'react';
+import React , {useContext} from 'react';
 
 import { AnimatedContainer, Navigation, AnimatedCard } from './styles';
 import { CONTAINER_ANIMATION, CARDS_ANIMATION } from './animations';
 import { DEFAULT_TRANSITION } from '../../../../constants';
 import {
-  Ingles,
-  Math,
-  Lite,
   Imodels,
 } from '../../../../constants/cards-navigation';
+import { ClassContext } from '../../../../contexts/class';
 
 interface NavigationCards {
   models: Imodels[];
-  onChange: (item: any) => void;
 }
 
-const NavigationCards: React.FC<NavigationCards> = ({ models, onChange }) => {
+const NavigationCards: React.FC<NavigationCards> = ({ models }) => {
+  const { handleCertificateModel } = useContext(ClassContext);
+
   return (
     <AnimatedContainer variants={CONTAINER_ANIMATION}>
       <Navigation>
@@ -24,7 +23,7 @@ const NavigationCards: React.FC<NavigationCards> = ({ models, onChange }) => {
             key={`card-${key}`}
             variants={CARDS_ANIMATION}
             transition={DEFAULT_TRANSITION}
-            onClick={() => onChange(value)}
+            onClick={() => handleCertificateModel(value)}
             whileHover={{ y: -2, transition: DEFAULT_TRANSITION }}
             whileTap={{ y: 2, transition: DEFAULT_TRANSITION }}
           >
