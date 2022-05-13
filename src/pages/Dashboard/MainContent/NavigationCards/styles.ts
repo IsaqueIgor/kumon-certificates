@@ -14,8 +14,9 @@ export const AnimatedContainer = styled(motion.div)`
 
 export const Navigation = styled.nav`
   ${() => css`
+    max-width: 850px;
     display: grid;
-    grid-template-columns: repeat(4, minmax(10.4rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     column-gap: 0.8rem;
     row-gap: 0.8rem;
   `}

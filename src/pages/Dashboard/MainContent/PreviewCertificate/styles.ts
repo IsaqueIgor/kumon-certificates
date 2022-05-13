@@ -70,9 +70,9 @@ export const PreviewContainer = styled.section`
     color: #000;
     text-align: center;
     position: absolute;
-    top: 0;
+    top: 13.5px;
     bottom: 0;
-    left: 0;
+    left: 20.5px;
     right: 0;
     height: fit-content;
     margin: auto;
