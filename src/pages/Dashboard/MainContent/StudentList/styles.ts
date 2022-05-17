@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   display: flex;
-  margin-top: 1.4rem;
+  margin-top: 2rem;
   flex-wrap: wrap
   width: 100%;
   justify-content: space-between;
@@ -27,7 +27,10 @@ export const ListWrapper = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-padding: 1.2rem;
+
+h3 {
+  margin-bottom: 1rem;
+}
 
 `
 

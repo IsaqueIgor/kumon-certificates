@@ -105,3 +105,16 @@ export const TextWater = styled.h1`
 export const TextWhisper = styled.h1`
   font-family: 'Whisper', cursive;
 `;
+
+export const TextTotal = styled.h4`
+  font-weight: bold;
+`;
+
+export const TextPrice = styled.h4`
+  font-weight: bold;
+  font-size: 26px;
+`;
+
+export const PriceContainer = styled.div`
+  display: flex;
+`

@@ -15,6 +15,7 @@ export type ClassContextType = {
     studentList: StudentList[];
     certificateModel: Imodels
     tipografia: Tipografia
+    totalPrice: number
     handleStudentList: (student: string) => void;
     handleRemoveStudent: (student: string) => void;
     handleTipografia: (tipo: Tipografia) => void;
@@ -28,6 +29,7 @@ export const ClassContext = createContext<ClassContextType>({
   handleTipografia: () => null,
   certificateModel: {icon: '', id: '', label: ''},
   studentList: [] ,
+  totalPrice: 0 ,
   tipografia: Tipografia.tipo1
 });
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import PreviewImg from './PreviewImg';
-import { Container, ConfirmWrapper } from './styles';
+import { Container, ConfirmWrapper , PriceContainer, TextPrice,TextTotal} from './styles';
 import { Button } from '../../../../components';
 import { ClassContext, Tipografia } from '../../../../contexts/class';
 import StudentsList from '../StudentList';
@@ -12,7 +12,7 @@ interface PreviewCertificate {
 }
 
 const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
-  const { handleTipografia, tipografia } = useContext(ClassContext);
+  const { handleTipografia, tipografia, totalPrice } = useContext(ClassContext);
   const [namePreview, setNamePreview] = useState('');
 
   const onChangeText = (event: any) => {
@@ -56,6 +56,14 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
       </div>
       <PreviewImg certificateImg={modeloImg} namePreview={namePreview}  selectedTipografia={tipografia} />
       <StudentsList />
+      <PriceContainer>
+        <TextTotal>
+        Subtotal:
+          <TextPrice>
+            ${totalPrice} MXN
+          </TextPrice>
+          </TextTotal>
+          </PriceContainer>
       <ConfirmWrapper>
         <Button>Enviar</Button>
       </ConfirmWrapper>
