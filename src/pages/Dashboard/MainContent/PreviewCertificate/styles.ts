@@ -118,3 +118,26 @@ export const TextPrice = styled.h4`
 export const PriceContainer = styled.div`
   display: flex;
 `
+
+export const customStyles = styled.div`
+  },`
+
+export const InvoiceContainer = styled.div`
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1px 1em;
+  min-height: 25em;
+  width: 23em;
+  box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
+`
+export const InvoiceTitle = styled.div`
+flex: 3;
+`
+export const MainTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+`

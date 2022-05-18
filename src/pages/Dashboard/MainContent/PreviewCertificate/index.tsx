@@ -1,18 +1,40 @@
 import React, { useContext, useState } from 'react';
 
 import PreviewImg from './PreviewImg';
-import { Container, ConfirmWrapper , PriceContainer, TextPrice,TextTotal} from './styles';
+import {
+  Container,
+  ConfirmWrapper,
+  PriceContainer,
+  TextPrice,
+  TextTotal,
+  InvoiceContainer,
+  InvoiceTitle,
+  MainTitle
+} from './styles';
 import { Button } from '../../../../components';
 import { ClassContext, Tipografia } from '../../../../contexts/class';
 import StudentsList from '../StudentList';
 import { options } from '../../../../constants';
+import Modal from "react-modal";
 
+Modal.setAppElement("#root");
 interface PreviewCertificate {
   modeloImg: string;
 }
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
 const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
-  const { handleTipografia, tipografia, totalPrice } = useContext(ClassContext);
+  const { handleTipografia, tipografia, totalPrice , handleOpenInvoice, toggleIsOpen} = useContext(ClassContext);
   const [namePreview, setNamePreview] = useState('');
 
   const onChangeText = (event: any) => {
@@ -65,8 +87,56 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
           </TextTotal>
           </PriceContainer>
       <ConfirmWrapper>
-        <Button>Enviar</Button>
+        <Button onClick={handleOpenInvoice}>Enviar</Button>
       </ConfirmWrapper>
+      <Modal
+        isOpen={toggleIsOpen}
+        onRequestClose={handleOpenInvoice}
+        contentLabel="My dialog"
+        style={customStyles}
+      >
+        <InvoiceContainer>
+          <InvoiceTitle>
+            <MainTitle>
+              <h4>INVOICE</h4>
+              <span>#89 292</span>
+            </MainTitle>
+
+          <span>16/02/2019</span>
+          </InvoiceTitle>
+          div class="invoice-details">
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <td>PRODUCT</td>
+          <td>UNIT</td>
+          <td>PRICE</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="row-data">
+          <td>Espresso <span>(large)</span></td>
+          <td id="unit">1</td>
+          <td>2.90</td>
+        </tr>
+
+        <tr class="row-data">
+          <td>Cappucino <span>(small)</span></td>
+          <td id="unit">2</td>
+          <td>7.00</td>
+        </tr>
+
+        <tr class="calc-row">
+          <td colspan="2">Total</td>
+          <td>9.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+        </InvoiceContainer>
+
+      </Modal>
     </Container>
   );
 };

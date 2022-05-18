@@ -10,15 +10,20 @@ interface MainContentProps {
   model: Imodels[];
 }
 
-const PRICE_PER_STUDENT = 1;
+const PRICE_PER_STUDENT = 2.5;
 
 const MainContent: React.FC<MainContentProps> = ({ model }) => {
   const [certificateModel, setCertificateModel] = useState(model[0]);
   const [studentList, setStudentList] = useState<StudentList[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [toggleIsOpen, setToggleIsOpen] = useState(false);
   const [tipografia, setTipografia] = useState<Tipografia>(
     Tipografia.tipo1,
    );
+
+  const handleOpenInvoice = () => {
+    setToggleIsOpen(!toggleIsOpen);
+  }
 
   const handleCertificateModel = (item: Imodels): void => {
     setCertificateModel(item)
@@ -50,9 +55,10 @@ const MainContent: React.FC<MainContentProps> = ({ model }) => {
 
   return (
     <Container>
-      <ClassContext.Provider value={{handleCertificateModel,totalPrice, handleRemoveStudent, handleStudentList, handleTipografia, certificateModel, studentList,tipografia }}>
+      <ClassContext.Provider value={{handleOpenInvoice, toggleIsOpen ,handleCertificateModel,totalPrice, handleRemoveStudent, handleStudentList, handleTipografia, certificateModel, studentList,tipografia }}>
         <NavigationCards models={model} />
         <PreviewCertificate modeloImg={certificateModel.icon} />
+
       </ClassContext.Provider>
     </Container>
   );

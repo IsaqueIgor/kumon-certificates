@@ -7,7 +7,6 @@ export const Container = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
-  z-index: 2;
   padding: 0 1.6rem;
 `;
 
