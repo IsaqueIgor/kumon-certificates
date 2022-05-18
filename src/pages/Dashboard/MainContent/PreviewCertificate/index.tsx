@@ -104,36 +104,6 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
 
           <span>16/02/2019</span>
           </InvoiceTitle>
-          div class="invoice-details">
-    <table class="invoice-table">
-      <thead>
-        <tr>
-          <td>PRODUCT</td>
-          <td>UNIT</td>
-          <td>PRICE</td>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr class="row-data">
-          <td>Espresso <span>(large)</span></td>
-          <td id="unit">1</td>
-          <td>2.90</td>
-        </tr>
-
-        <tr class="row-data">
-          <td>Cappucino <span>(small)</span></td>
-          <td id="unit">2</td>
-          <td>7.00</td>
-        </tr>
-
-        <tr class="calc-row">
-          <td colspan="2">Total</td>
-          <td>9.00</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
         </InvoiceContainer>
 
       </Modal>
