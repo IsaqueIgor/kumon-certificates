@@ -129,7 +129,7 @@ export const InvoiceContainer = styled.div`
   background-color: #fff;
   border-radius: 5px;
   padding: 1px 1em;
-  min-height: 25em;
+  min-height: 15em;
   width: 23em;
   box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
 `
@@ -140,4 +140,35 @@ export const MainTitle = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
+`
+
+export const InvoiceFooter = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  button {
+    margin: 0 12px;
+    cursor: pointer;
+  }
+`
+
+export const InvoiceDetails = styled.div`
+flex: 1;
+  border-top: 0.5px dashed grey;
+  border-bottom: 0.5px dashed grey;
+  display: flex;
+  align-items: center;
+`
+export const InvoiceTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+
+  thead tr td {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: grey;
+    padding: 8px 0;
+  }
 `

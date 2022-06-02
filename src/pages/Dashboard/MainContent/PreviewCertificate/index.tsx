@@ -9,7 +9,10 @@ import {
   TextTotal,
   InvoiceContainer,
   InvoiceTitle,
-  MainTitle
+  MainTitle,
+  InvoiceDetails,
+  InvoiceTable,
+  InvoiceFooter
 } from './styles';
 import { Button } from '../../../../components';
 import { ClassContext, Tipografia } from '../../../../contexts/class';
@@ -34,7 +37,15 @@ const customStyles = {
 };
 
 const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
-  const { handleTipografia, tipografia, totalPrice , handleOpenInvoice, toggleIsOpen} = useContext(ClassContext);
+  const {
+    handleTipografia,
+    tipografia,
+    totalPrice ,
+    studentList,
+    handleOpenInvoice,
+    toggleIsOpen,
+    certificateModel
+  } = useContext(ClassContext);
   const [namePreview, setNamePreview] = useState('');
 
   const onChangeText = (event: any) => {
@@ -99,11 +110,40 @@ const PreviewCertificate: React.FC<PreviewCertificate> = ({ modeloImg }) => {
           <InvoiceTitle>
             <MainTitle>
               <h4>INVOICE</h4>
-              <span>#89 292</span>
+              <span>KUMON</span>
             </MainTitle>
-
-          <span>16/02/2019</span>
           </InvoiceTitle>
+         <InvoiceDetails>
+          <InvoiceTable>
+            <thead>
+              <tr>
+                <td>DESCRIPCIÓN</td>
+              </tr>
+            </thead>
+
+            <tbody>
+        <tr>
+          <td>Participantes</td>
+          <td>{studentList.length}</td>
+        </tr>
+
+        <tr>
+          <td>Tipografia</td>
+          <td>{tipografia}</td>
+        </tr>
+
+        <tr>
+          <td>Modelo</td>
+          <td>{certificateModel.label}</td>
+        </tr>
+        </tbody>
+            </InvoiceTable>
+
+            </InvoiceDetails>
+          <InvoiceFooter>
+              <Button onClick={handleOpenInvoice} color='#f05b72'>Cerrar</Button>
+              <Button color='#8ac643'>Confirmar</Button>
+          </InvoiceFooter>
         </InvoiceContainer>
 
       </Modal>
