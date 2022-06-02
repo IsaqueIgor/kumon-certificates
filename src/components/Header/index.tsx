@@ -8,7 +8,6 @@ import {
 } from './styles';
 import { KumonLogo } from '../../assets/images';
 import AccountDropdown from './AccountDropdown';
-import useAuth from '../../contexts/auth';
 import Gradient from './Gradient';
 import { CONTAINER_ANIMATION, NAVS_ANIMATION } from './animations';
 

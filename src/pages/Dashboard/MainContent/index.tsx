@@ -33,11 +33,6 @@ const MainContent: React.FC<MainContentProps> = ({ model }) => {
     setStudentList([...studentList, {name: student}])
   };
 
-  const changePrice = (): void => {
-    const totalStudents = studentList.length
-    setTotalPrice(totalStudents*PRICE_PER_STUDENT)
-  };
-
   const handleRemoveStudent = (nameToBeRemove: string): void => {
     const newList = studentList.filter((student) => {
       return student.name !== nameToBeRemove;
@@ -50,7 +45,8 @@ const MainContent: React.FC<MainContentProps> = ({ model }) => {
   };
 
   useEffect(() => {
-    changePrice()
+    const totalStudents = studentList.length
+    setTotalPrice(totalStudents*PRICE_PER_STUDENT)
   }, [studentList]);
 
   return (
